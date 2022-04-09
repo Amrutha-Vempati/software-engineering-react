@@ -5,29 +5,38 @@ const TuitStats = ({tuit, likeTuit = () => {}}) => {
       <div className="row mt-2">
         <div className="col">
           <i className="far fa-message me-1"></i>
-          {tuit.stats &&
-          <span className="ttr-stats-replies">{tuit.stats.replies}</span>
-          }
+          {tuit.stats && tuit.stats.replies}
         </div>
         <div className="col">
           <i className="far fa-retweet me-1"></i>
-          {tuit.stats &&
-          <span className="ttr-stats-retuits">{tuit.stats.retuits}</span>
-          }
+          {tuit.stats && tuit.stats.retuits}
         </div>
         <div className="col">
-          <span className="ttr-like-tuit-click" onClick={() => likeTuit(tuit)}>
+          <span onClick={() => likeTuit(tuit)}>
               {
                 tuit.stats && tuit.stats.likes && tuit.stats.likes > 0 &&
-                  <i className="fas fa-heart me-1" style={{color: 'red'}}></i>
+                  <i className="fas fa-thumbs-up" style={{color: 'deepskyblue'}}></i>
               }
               {
                 tuit.stats && tuit.stats.likes && tuit.stats.likes <= 0 &&
-                  <i className="far fa-heart me-1"></i>
+                  <i className="far fa-thumbs-up"></i>
               }
-            <span className="ttr-stats-likes">{tuit.stats && tuit.stats.likes}</span>
+            {tuit.stats && tuit.stats.likes}
           </span>
         </div>
+          <div className="col">
+          <span onClick={() => likeTuit(tuit)}>
+              {
+                  tuit.stats && tuit.stats.likes && tuit.stats.likes > 0 &&
+                  <i className="fas fa-thumbs-down" style={{color: 'grey'}}></i>
+              }
+              {
+                  tuit.stats && tuit.stats.likes && tuit.stats.likes <= 0 &&
+                  <i className="far fa-thumbs-down"></i>
+              }
+              {tuit.stats && tuit.stats.likes}
+          </span>
+          </div>
         <div className="col">
           <i className="far fa-inbox-out"></i>
         </div>
