@@ -1,17 +1,20 @@
 import axios from "axios";
 // const BASE_URL = "https://cs5500-01-sp22.herokuapp.com/api";
 // const BASE_URL = "http://localhost:4000/api";
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-
+//const BASE_URL = process.env.REACT_APP_BASE_URL;
+const BASE_URL = "http://localhost:4000"
 const SECURITY_API = `${BASE_URL}/api/auth`;
 
 const api = axios.create({
     withCredentials: true
 });
 
-export const register = (user) =>
-    api.post(`${SECURITY_API}/register`, user)
+export const register = (user) => {
+    console.log("In register")
+    console.log(user)
+    return api.post(`${SECURITY_API}/register`, user)
         .then(response => response.data);
+}
 
 export const login = (user) =>
     api.post(`${SECURITY_API}/login`, user)
