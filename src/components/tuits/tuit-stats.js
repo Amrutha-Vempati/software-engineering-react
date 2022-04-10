@@ -15,11 +15,11 @@ const TuitStats = ({tuit, likeTuit, dislikeTuit = () => {}}) => {
           <span onClick={() => likeTuit(tuit)}>
               {
                 tuit.stats && tuit.stats.likes && tuit.stats.likes > 0 &&
-                  <i className="fas fa-thumbs-up" style={{color: 'deepskyblue'}}></i>
+                  <i className="fas fa-thumbs-up me-1" style={{color: 'deepskyblue'}}></i>
               }
               {
                 tuit.stats && tuit.stats.likes && tuit.stats.likes <= 0 &&
-                  <i className="far fa-thumbs-up"></i>
+                  <i className="far fa-thumbs-up me-1"></i>
               }
             {tuit.stats && tuit.stats.likes}
           </span>
@@ -28,11 +28,11 @@ const TuitStats = ({tuit, likeTuit, dislikeTuit = () => {}}) => {
           <span onClick={() => dislikeTuit(tuit)}>
               {
                   tuit.stats && tuit.stats.dislikes && tuit.stats.dislikes > 0 &&
-                  <i className="fas fa-thumbs-down" style={{color: 'grey'}}></i>
+                  <i className="fas fa-thumbs-down me-1" style={{color: 'grey'}}></i>
               }
               {
                   tuit.stats && tuit.stats.dislikes && tuit.stats.dislikes <= 0 &&
-                  <i className="far fa-thumbs-down"></i>
+                  <i className="far fa-thumbs-down me-1"></i>
               }
               {tuit.stats && tuit.stats.dislikes}
           </span>
