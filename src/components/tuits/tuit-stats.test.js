@@ -29,9 +29,13 @@ test('stats render correctly', () => {
   })
   
   const root = tuitStats.root;
+  // eslint-disable-next-line testing-library/await-async-query
   const likesCounter = root.findByProps({className: 'ttr-stats-likes'})
+  // eslint-disable-next-line testing-library/await-async-query
   const retuitsCounter = root.findByProps({className: 'ttr-stats-retuits'})
+  // eslint-disable-next-line testing-library/await-async-query
   const repliesCounter = root.findByProps({className: 'ttr-stats-replies'})
+  // eslint-disable-next-line testing-library/await-async-query
   const likeTuitButton = root.findByProps(
     {className: 'ttr-like-tuit-click'})
 
